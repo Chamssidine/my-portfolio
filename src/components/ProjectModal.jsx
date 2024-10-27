@@ -36,6 +36,15 @@ function ProjectModal({ project, onClose }) {
         >
           Close
         </button>
+        <motion.a
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          href={project.downloadUrl}
+          download
+          className="px-4 py-2 ml-2 bg-green-600 left-4 text-white rounded"
+        >
+          <i class="fa-solid fa-download"></i>
+        </motion.a>
       </motion.div>
     </div>
   );

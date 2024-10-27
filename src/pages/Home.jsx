@@ -3,34 +3,40 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 function Home() {
-  const navigate = useNavigate(); // Initialize the hook
+  const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate("/projects"); // Navigate to the Projects page
+    navigate("/projects");
+  };
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
-    <div className="p-8 min-h-screen flex flex-col items-center justify-center text-center">
+    <div className="p-8 min-h-screen flex flex-col items-center justify-center text-center bg-white relative">
       {/* Animated Heading */}
       <motion.h1
         className="text-4xl font-bold mb-4"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
         transition={{ duration: 0.8 }}
       >
         Welcome to My Portfolio
       </motion.h1>
 
-      {/* Animated Paragraph */}
+      {/* Enhanced Introduction */}
       <motion.p
         className="text-lg mb-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
-        I'm Chamssidine Abdallah, a Full-Stack Developer with experience in C#,
-        Unity, JavaScript, Python, and mobile development with Kotlin Jetpack
-        Compose.
+        I'm Chamssidine Abdallah, a Full-Stack Developer specializing in C#,
+        Unity, Kotlin, and more. Let's build something amazing together!
       </motion.p>
 
       {/* Animated Button with Redirect */}
@@ -38,31 +44,33 @@ function Home() {
         className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded transition mb-6"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
         transition={{ delay: 0.5, duration: 0.8 }}
-        onClick={handleButtonClick} // Handle click event
+        onClick={handleButtonClick}
+        style={{ zIndex: 1 }} // Ensure the button is clickable
       >
         Let's go!
       </motion.button>
 
-      {/* Skill Badges */}
+      {/* Animated Skill Badges */}
       <motion.div
         className="mt-6 flex space-x-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
         transition={{ delay: 0.8, duration: 1 }}
+        style={{ zIndex: 1 }} // Ensure skill badges are above any other background elements
       >
-        <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">C#</span>
-        <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">
-          Unity
-        </span>
-        <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">
-          Kotlin
-        </span>
-        <span className="bg-gray-200 px-3 py-1 rounded-full text-sm">
-          Python
-        </span>
+        {["C#", "Unity", "Kotlin", "Python"].map((skill, index) => (
+          <span
+            key={index}
+            className="bg-gray-200 px-3 py-1 rounded-full text-sm"
+          >
+            {skill}
+          </span>
+        ))}
       </motion.div>
     </div>
   );

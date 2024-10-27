@@ -2,7 +2,7 @@
 import React from "react";
 
 function FilterButtons({ selectedFilter, onFilterChange }) {
-  const filters = ["All", "React", "Kotlin", "Unity", "JavaScript", "VR"];
+  const filters = ["All", "React", "Kotlin", "Unity", "JavaScript", "VR", "Python", "C"];
 
   return (
     <div className="flex gap-2 mb-6">

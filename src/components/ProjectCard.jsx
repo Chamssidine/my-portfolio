@@ -1,8 +1,8 @@
-// ProjectCard.js
+// src/components/ProjectCard.jsx
 import React from "react";
 import { motion } from "framer-motion";
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, onOpenModal }) {
   return (
     <motion.div
       className="p-4 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2"
@@ -32,10 +32,12 @@ function ProjectCard({ project }) {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="px-4 py-2 bg-blue-600 text-white rounded"
+        className="px-4 py-2 bg-blue-600 text-white rounded mr-2"
+        onClick={() => onOpenModal(project)}
       >
         View Details
       </motion.button>
+     
     </motion.div>
   );
 }

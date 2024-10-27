@@ -17,10 +17,9 @@ function App() {
         </div>
 
         {/* Main content fills the remaining space */}
-        <div className="flex-1 p-2 bg-gray-100">
+        <div className="flex-1 px-2 pb-2 bg-gray-100">
           <div className="h-full bg-white rounded-lg shadow-lg flex flex-col">
             {/* Header section */}
-           
 
             {/* Routes section takes up the rest */}
             <div className="flex-1 p-5 overflow-auto">
