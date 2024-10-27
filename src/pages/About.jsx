@@ -13,6 +13,12 @@ function About() {
       >
         About Me
       </motion.h2>
+      <motion.img
+        className="w-48 h-48 object-cover  rounded-full mb-4"
+        src="/profile.png"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+      />
 
       {/* Animated Paragraph */}
       <motion.p

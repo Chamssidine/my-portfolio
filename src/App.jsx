@@ -20,9 +20,7 @@ function App() {
         <div className="flex-1 p-2 bg-gray-100">
           <div className="h-full bg-white rounded-lg shadow-lg flex flex-col">
             {/* Header section */}
-            <div className="bg-yellow-400 p-4 rounded-t-lg">
-              <p className="text-center font-bold">Hello</p>
-            </div>
+           
 
             {/* Routes section takes up the rest */}
             <div className="flex-1 p-5 overflow-auto">

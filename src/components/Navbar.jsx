@@ -13,7 +13,7 @@ function Navbar() {
         Menu
       </button>
       <nav
-        className={`fixed top-0 left-0 h-full bg-blue-600 text-white p-4 transition-transform transform ${
+        className={`fixed top-0 left-0 h-full bg-white text-gray-600 p-4 transition-transform transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0 md:w-64`}
       >
