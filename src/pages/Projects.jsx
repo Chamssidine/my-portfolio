@@ -12,7 +12,7 @@ const projects = [
     description: "A responsive portfolio built with React and Tailwind CSS.",
     technologies: ["React", "Tailwind CSS", "JavaScript"],
     imageUrl: "./web.webp", // Replace with your image path
-    downloadUrl: "path/to/your/demo1.zip", // Replace with your demo file URL
+    downloadUrl: "https://github.com/Chamssidine/my-portfolio.git", // Replace with your demo file URL
   },
   {
     id: 2,
@@ -36,6 +36,24 @@ const projects = [
     technologies: ["Python, PyQte6, Eric6"],
     imageUrl: "./facial_detection.png",
     downloadUrl: "",
+  },
+  {
+    id: 5,
+    title: "Image Authentication",
+    description:
+      "Restfull API Image authentication using ASP.Net  and Solidity to authenticate a given ImaegData using the blockchain",
+    technologies: ["ASP.Net, Solidity"],
+    imageUrl: "./blockChain.jfif",
+    downloadUrl: "https://github.com/Chamssidine/ImageAuth.git",
+  },
+  {
+    id: 6,
+    title: "ideaHub",
+    description:
+      "deaHub is a platform designed to foster innovation by allowing users to share, explore, and contribute to creative ideas. The application is structured around communities, where users can join groups, contribute to discussions, and collaborate on innovative solutions.",
+    technologies: ["kotlin, Jetpack Compose"],
+    imageUrl: "./ideahub.jfif",
+    downloadUrl: "https://github.com/Chamssidine/IdeaHub.git",
   },
 ];
 
