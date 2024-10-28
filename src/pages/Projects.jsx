@@ -30,29 +30,29 @@ const projects = [
     imageUrl: "./vr.webp", // Replace with your image path
     downloadUrl: "path/to/your/demo3.zip", // Replace with your demo file URL
   },
-  {
-    id: 4,
-    title: "Application de reconnaissance faciale",
-    technologies: ["Python, PyQte6, Eric6"],
-    imageUrl: "./facial_detection.png",
-    downloadUrl: "",
-  },
-  {
-    id: 5,
-    title: "Image Authentication",
-    description:
-      "Restfull API Image authentication using ASP.Net  and Solidity to authenticate a given ImaegData using the blockchain",
-    technologies: ["ASP.Net, Solidity"],
-    imageUrl: "./blockChain.jfif",
-    downloadUrl: "https://github.com/Chamssidine/ImageAuth.git",
-  },
+{
+  "id": 4,
+  "title": "Facial Recognition Application",
+  "technologies": ["Python", "PyQt6", "Eric6"],
+  "description": "Application for face detection and facial recognition using HAAR cascade and HOG (Histogram of Oriented Gradients)",
+  "imageUrl": "./facial_detection.png",
+  "downloadUrl": ""
+},
+{
+  "id": 5,
+  "title": "Image Authentication",
+  "description": "RESTful API for image authentication using ASP.NET and Solidity to verify a given image's data on the blockchain",
+  "technologies": ["ASP.NET", "Solidity"],
+  "imageUrl": "./blockChain.jfif",
+  "downloadUrl": "https://github.com/Chamssidine/ImageAuth.git"
+},
   {
     id: 6,
     title: "ideaHub",
     description:
       "deaHub is a platform designed to foster innovation by allowing users to share, explore, and contribute to creative ideas. The application is structured around communities, where users can join groups, contribute to discussions, and collaborate on innovative solutions.",
     technologies: ["kotlin, Jetpack Compose"],
-    imageUrl: "./ideahub.jfif",
+    imageUrl: "./ideahub.jfif ",
     downloadUrl: "https://github.com/Chamssidine/IdeaHub.git",
   },
 ];
