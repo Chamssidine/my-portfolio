@@ -56,7 +56,7 @@ function About() {
       </motion.div>
 
       {/* Timeline Section */}
-      <motion.div
+      {/* <motion.div
         className="w-full max-w-3xl text-left"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -70,7 +70,7 @@ function About() {
           <li>2021 - Started freelancing as a full-stack developer</li>
           <li>2023 - Built several desktop and mobile applications</li>
         </ul>
-      </motion.div>
+      </motion.div> */}
 
       {/* Fun Fact Section */}
       <motion.div

@@ -116,6 +116,7 @@ function Contact() {
           Send
         </button>
       </motion.form>
+ 
     </motion.div>
   );
 }

@@ -36,7 +36,7 @@ const projects = [
   "technologies": ["Python", "PyQt6", "Eric6"],
   "description": "Application for face detection and facial recognition using HAAR cascade and HOG (Histogram of Oriented Gradients)",
   "imageUrl": "./facial_detection.png",
-  "downloadUrl": ""
+  "downloadUrl": "https://github.com/Chamssidine/FaceDetection.git"
 },
 {
   "id": 5,
