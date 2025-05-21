@@ -55,6 +55,13 @@ const projects = [
     imageUrl: "./ideahub.jfif ",
     downloadUrl: "https://github.com/Chamssidine/IdeaHub.git",
   },
+  {
+    id: 7,
+    title: "ChatApp",
+    description:
+      "deaHub is a platform designed to foster innovation by allowing users to share, explore, and contribute to creative ideas. The application is structured around communities, where users can join groups, contribute to discussions, and collaborate on innovative solutions.",
+    technologies: ["kotlin, Jetpack Compose"],
+  }
 ];
 
 function Projects() {
