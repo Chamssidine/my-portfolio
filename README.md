@@ -1,8 +1,36 @@
-# React + Vite
+# Portfolio Website - Chams
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code of my personal portfolio website, showcasing my skills, projects, and professional background.
 
-Currently, two official plugins are available:
+## 🚀 About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The portfolio is built with **React.js** and styled using **Tailwind CSS**. It is deployed on **Netlify** for fast and reliable hosting.  
+The goal is to provide a clear and engaging presentation of my work, highlighting frontend development capabilities and responsive design.
+
+## 🌐 Live Demo
+
+Check out the live version here: [https://my-portfolio-chams.netlify.app/](https://my-portfolio-chams.netlify.app/)
+
+## 🛠️ Technologies Used
+
+- React.js
+- Tailwind CSS
+- JavaScript (ES6+)
+- HTML5 & CSS3
+- Netlify (Deployment)
+- Git & GitHub (Version Control)
+
+## 📂 Project Structure
+
+- `/src` — source code files
+- `/public` — static assets (images, icons, etc.)
+- `/components` — React components
+- `/styles` — Tailwind configuration and custom styles
+
+## 💻 Getting Started
+
+To run this project locally:
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
