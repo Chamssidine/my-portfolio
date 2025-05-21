@@ -58,10 +58,12 @@ const projects = [
   {
     id: 7,
     title: "ChatApp",
-    description:
-      "deaHub is a platform designed to foster innovation by allowing users to share, explore, and contribute to creative ideas. The application is structured around communities, where users can join groups, contribute to discussions, and collaborate on innovative solutions.",
-    technologies: ["kotlin, Jetpack Compose"],
+    description: "An AI-powered chat application enabling interactions with various GPT models, document uploads, and intelligent analyses.",
+    technologies: ["React.js", "Tailwind CSS", "Vite", "Node.js", "Express.js", "OpenAI API"],
+    imageUrl: "./chatapp.png",
+    downloadUrl: "https://github.com/Chamssidine/chat-app.git"
   }
+
 ];
 
 function Projects() {
