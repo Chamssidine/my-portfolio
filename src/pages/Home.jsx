@@ -1,6 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
@@ -24,9 +24,8 @@ function Home() {
         variants={fadeInUp}
         transition={{ duration: 0.8 }}
       >
-        Welcome to My Portfolio
+        Bienvenue sur mon portfolio
       </motion.h1>
-
       {/* Enhanced Introduction */}
       <motion.p
         className="text-lg mb-6"
@@ -35,42 +34,25 @@ function Home() {
         variants={fadeInUp}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
-        I'm Chamssidine Abdallah, a Full-Stack Developer specializing in C#,
-        Unity, Kotlin, and more. Let's build something amazing together!
+        Je suis Chamssidine Abdallah, développeur Full-Stack. <br />
+        Explorez mes projets, contactez-moi pour collaborer (Freelance ou CDI).
       </motion.p>
-
-      {/* Animated Button with Redirect */}
-      <motion.button
-        className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded transition mb-6"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        initial="hidden"
-        animate="visible"
-        variants={fadeInUp}
-        transition={{ delay: 0.5, duration: 0.8 }}
-        onClick={handleButtonClick}
-        style={{ zIndex: 1 }} // Ensure the button is clickable
-      >
-        Let's go!
-      </motion.button>
-
-      {/* Animated Skill Badges */}
-      <motion.div
-        className="mt-6 flex space-x-4"
-        initial="hidden"
-        animate="visible"
-        variants={fadeInUp}
-        transition={{ delay: 0.8, duration: 1 }}
-        style={{ zIndex: 1 }} // Ensure skill badges are above any other background elements
-      >
-        {["C#", "Unity", "Kotlin", "Python"].map((skill, index) => (
-          <span
-            key={index}
-            className="bg-gray-200 px-3 py-1 rounded-full text-sm"
-          >
-            {skill}
-          </span>
-        ))}
+      {/* Call to Action */}
+      <motion.div className="flex gap-4 justify-center mt-6">
+        <button
+          className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700"
+          onClick={handleButtonClick}
+        >
+          Voir mes projets
+        </button>
+        <a
+          href="mailto:chamssidineab@gmail.com"
+          className="px-6 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700"
+          target="_blank"
+          rel="noopener"
+        >
+          Travailler avec moi
+        </a>
       </motion.div>
     </div>
   );
