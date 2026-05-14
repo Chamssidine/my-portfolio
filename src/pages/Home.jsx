@@ -15,6 +15,20 @@ import {
 
 const projects = [
   {
+    title: "MadaCampus Interculturel",
+    category: "Live Web App",
+    visibility: "Live",
+    url: "https://madacampus-preview-626987138763.europe-west1.run.app/",
+    linkLabel: { fr: "Voir le site", de: "Website ansehen", en: "View live site" },
+    visual: "campus",
+    tech: ["Web App", "UX", "Deployment"],
+    description: {
+      fr: "Site deploye pour une academie interculturelle malgache autour de la preparation au volontariat BFD/FSJ et au retour a Madagascar.",
+      de: "Live-Website fur eine madagassische interkulturelle Akademie zur Vorbereitung auf BFD/FSJ und Ruckkehr nach Madagaskar.",
+      en: "Live website for a Malagasy intercultural academy focused on BFD/FSJ volunteer preparation and return to Madagascar.",
+    },
+  },
+  {
     title: "weg-to-deutschland",
     category: "Web App",
     visibility: "Private",
@@ -292,18 +306,17 @@ function ProjectVisual({ project }) {
       <div className="project-cover-grid" />
       <div className="project-cover-orbit orbit-a" />
       <div className="project-cover-orbit orbit-b" />
-      <div className="project-cover-panel panel-main">
+      <div className="project-cover-mark">
+        {project.title
+          .split(/[\s-]+/)
+          .slice(0, 2)
+          .map((word) => word[0])
+          .join("")
+          .toUpperCase()}
+      </div>
+      <div className="project-cover-title">
         <span>{project.category}</span>
         <strong>{project.title}</strong>
-      </div>
-      <div className="project-cover-panel panel-side">
-        {project.tech.slice(0, 3).map((tech) => (
-          <i key={tech}>{tech}</i>
-        ))}
-      </div>
-      <div className="project-cover-code">
-        <b>01</b>
-        <span>{project.visibility}</span>
       </div>
     </div>
   );
@@ -540,20 +553,20 @@ function Home({ language }) {
                 key={project.title}
                 type="button"
                 onClick={() => setActiveProject(project)}
-                className={`rounded-[28px] border p-5 text-left transition ${
+                className={`rounded-[24px] border px-5 py-4 text-left transition ${
                   activeProject.title === project.title
                     ? "border-[#5eead4] bg-[#5eead4] text-[#08110f] shadow-xl shadow-[#5eead4]/15"
                     : "border-white/10 bg-white/10 text-[#f7f0e6] backdrop-blur hover:-translate-y-1 hover:border-[#5eead4]/50"
                 }`}
               >
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex items-center justify-between gap-4">
                   <div>
-                    <p className="text-xs font-black uppercase tracking-[0.18em] opacity-70">
+                    <p className="text-[0.68rem] font-black uppercase tracking-[0.18em] opacity-70">
                       {project.category}
                     </p>
-                    <h3 className="mt-2 text-xl font-black">{project.title}</h3>
+                    <h3 className="mt-1 text-lg font-black">{project.title}</h3>
                   </div>
-                  <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-black">
+                  <span className="shrink-0 rounded-full bg-white/15 px-3 py-1 text-xs font-black">
                     {project.visibility}
                   </span>
                 </div>
@@ -596,7 +609,7 @@ function Home({ language }) {
                 rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#5eead4] px-6 py-3 text-sm font-black text-[#08110f] transition hover:-translate-y-1 hover:bg-[#f4c76b]"
               >
-                {t.publicLabel}
+                {activeProject.linkLabel?.[language] || t.publicLabel}
                 <FaArrowUpRightFromSquare className="text-xs" />
               </a>
             ) : (
