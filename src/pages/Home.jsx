@@ -96,6 +96,34 @@ const otherProjects = [
   "IdeaHub",
 ];
 
+const techStack = [
+  {
+    key: "frontend",
+    label: { fr: "Frontend", de: "Frontend" },
+    items: ["React", "Next.js", "Tailwind CSS", "Vite", "JavaScript", "TypeScript"],
+  },
+  {
+    key: "backend",
+    label: { fr: "Backend", de: "Backend" },
+    items: ["Node.js", "Express", "ASP.NET", "REST API", "Authentication"],
+  },
+  {
+    key: "data",
+    label: { fr: "Data & Cloud", de: "Data & Cloud" },
+    items: ["Firebase", "Firestore", "Cloud Storage", "Data Workflows"],
+  },
+  {
+    key: "ai",
+    label: { fr: "IA & Automation", de: "KI & Automation" },
+    items: ["OpenAI API", "Document Analysis", "Scraping", "Python"],
+  },
+  {
+    key: "tools",
+    label: { fr: "Tools", de: "Tools" },
+    items: ["Git", "GitHub", "ESLint", "PostCSS", "Netlify"],
+  },
+];
+
 const copy = {
   fr: {
     heroBadge: "Full-Stack Developer web",
@@ -363,6 +391,49 @@ function Home({ language }) {
               <p className="mt-3 text-sm leading-6 text-[#cdd8d0]">{text}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 rounded-[40px] border border-white/10 bg-white/10 p-5 shadow-xl shadow-black/10 backdrop-blur sm:p-7">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.24em] text-[#5eead4]">
+                Tech Stack
+              </p>
+              <h3 className="mt-3 text-3xl font-black text-[#f7f0e6]">
+                {language === "fr"
+                  ? "Les technologies que j'utilise pour livrer."
+                  : "Technologien, mit denen ich Produkte liefere."}
+              </h3>
+            </div>
+            <p className="max-w-md text-sm leading-6 text-[#aab8b0]">
+              {language === "fr"
+                ? "Un apercu rapide de ma stack principale, organisee par usage."
+                : "Ein schneller Uberblick uber meinen Hauptstack, nach Einsatzbereich organisiert."}
+            </p>
+          </div>
+
+          <div className="mt-7 grid gap-4 lg:grid-cols-5">
+            {techStack.map((group) => (
+              <div
+                key={group.key}
+                className="rounded-[28px] border border-white/10 bg-[#08110f]/45 p-4"
+              >
+                <h4 className="text-sm font-black uppercase tracking-[0.18em] text-[#f4c76b]">
+                  {group.label[language]}
+                </h4>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs font-black text-[#d7dfd8]"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
