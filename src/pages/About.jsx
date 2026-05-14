@@ -1,88 +1,108 @@
-import React from "react";
 import { motion } from "framer-motion";
+import { FaCodeBranch, FaLayerGroup, FaPuzzlePiece } from "react-icons/fa6";
+
+const skills = [
+  "React",
+  "Tailwind CSS",
+  "JavaScript",
+  "Kotlin",
+  "Jetpack Compose",
+  "C#",
+  "Unity",
+  "Python",
+  "ASP.NET",
+  "Solidity",
+];
+
+const strengths = [
+  {
+    icon: FaLayerGroup,
+    title: "Produit clair",
+    text: "Je pense l'interface, le parcours et le resultat attendu avant d'ecrire les composants.",
+  },
+  {
+    icon: FaCodeBranch,
+    title: "Stack polyvalente",
+    text: "Web, mobile, desktop, backend et prototypes interactifs selon le besoin du projet.",
+  },
+  {
+    icon: FaPuzzlePiece,
+    title: "Resolution concrete",
+    text: "J'aime decomposer les problemes complexes en experiences simples a utiliser.",
+  },
+];
 
 function About() {
   return (
-    <div className="p-8 min-h-screen flex flex-col items-center text-center">
-      {/* Animated Heading */}
-      <motion.h2
-        className="text-4xl font-bold mb-6"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        About Me
-      </motion.h2>
-      <motion.img
-        className="w-48 h-48 object-cover  rounded-full mb-4"
-        src="/profile.png"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-      />
+    <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
+      <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="relative"
+        >
+          <div className="absolute -left-8 top-8 h-48 w-48 rounded-full bg-sky-300/30 blur-3xl" />
+          <div className="relative overflow-hidden rounded-[40px] border border-white bg-white/80 p-5 shadow-2xl shadow-slate-300/60">
+            <img
+              className="h-[420px] w-full rounded-[32px] object-cover object-top"
+              src="/profile.png"
+              alt="Chamssidine Abdallah"
+            />
+            <div className="absolute bottom-9 left-9 right-9 rounded-3xl border border-white/30 bg-slate-950/85 p-5 text-white backdrop-blur">
+              <p className="text-sm font-bold text-sky-200">Full-Stack Developer</p>
+              <h2 className="mt-1 text-2xl font-black">Chamssidine Abdallah</h2>
+            </div>
+          </div>
+        </motion.div>
 
-      {/* Animated Paragraph */}
-      <motion.p
-        className="text-lg mb-8 max-w-2xl"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 1 }}
-      >
-        I'm a passionate developer with experience in various programming
-        languages and frameworks. I enjoy building software that solves
-        real-world problems, whether it's a game in Unity, a mobile app, or a
-        desktop application.
-      </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.6 }}
+        >
+          <p className="text-sm font-black uppercase tracking-[0.24em] text-sky-700">
+            A propos
+          </p>
+          <h1 className="mt-4 text-4xl font-black leading-tight text-slate-950 sm:text-5xl">
+            Je construis des applications qui donnent confiance des le premier clic.
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+            Mon profil combine developpement full-stack, experimentation mobile,
+            applications desktop et projets immersifs. Je cree des interfaces
+            nettes, les parcours simples et les solutions qui repondent vraiment
+            au besoin utilisateur.
+          </p>
 
-      {/* Skill Badges Section */}
-      <motion.div
-        className="flex flex-wrap justify-center gap-4 mb-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 1 }}
-      >
-        <span className="bg-blue-100 px-4 py-2 rounded-full text-sm">C#</span>
-        <span className="bg-blue-100 px-4 py-2 rounded-full text-sm">
-          Unity
-        </span>
-        <span className="bg-blue-100 px-4 py-2 rounded-full text-sm">
-          Kotlin
-        </span>
-        <span className="bg-blue-100 px-4 py-2 rounded-full text-sm">
-          Python
-        </span>
-        <span className="bg-blue-100 px-4 py-2 rounded-full text-sm">
-          JavaScript
-        </span>
-      </motion.div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {strengths.map(({ icon: Icon, title, text }) => (
+              <div
+                key={title}
+                className="rounded-3xl border border-white bg-white/80 p-5 shadow-sm shadow-slate-200"
+              >
+                <Icon className="mb-4 text-2xl text-sky-600" />
+                <h3 className="text-lg font-black text-slate-950">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{text}</p>
+              </div>
+            ))}
+          </div>
 
-      {/* Timeline Section */}
-      {/* <motion.div
-        className="w-full max-w-3xl text-left"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.7, duration: 1 }}
-      >
-        <h3 className="text-2xl font-bold mb-4">Timeline</h3>
-        <ul className="list-disc list-inside space-y-2">
-          <li>2018 - Started learning programming</li>
-          <li>2019 - Developed my first game in Unity</li>
-          <li>2020 - Worked on mobile apps using Kotlin</li>
-          <li>2021 - Started freelancing as a full-stack developer</li>
-          <li>2023 - Built several desktop and mobile applications</li>
-        </ul>
-      </motion.div> */}
-
-      {/* Fun Fact Section */}
-      <motion.div
-        className="mt-12"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-      >
-        <h3 className="text-2xl font-bold mb-4">Fun Facts</h3>
-        <p>I drink way too much coffee ☕ and love solving complex puzzles!</p>
-      </motion.div>
-    </div>
+          <div className="mt-8 rounded-[32px] border border-slate-200 bg-white/80 p-6">
+            <h3 className="text-lg font-black text-slate-950">Technologies</h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-bold text-slate-700"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 }
 

@@ -1,41 +1,26 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Projects from "./pages/Projects";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Navbar from "./components/Navbar";
+import { useState } from "react";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 
 function App() {
+  const [language, setLanguage] = useState("fr");
+
   return (
-    <Router>
-      <div className="min-h-screen flex">
-        {/* Sidebar with fixed width */}
-        <div className="w-64">
-          <Navbar />
-        </div>
-
-        {/* Main content fills the remaining space */}
-        <div className="flex-1 px-2 pb-2 bg-gray-100">
-          <div className="h-full bg-white rounded-lg shadow-lg flex flex-col">
-            {/* Header section */}
-
-            {/* Routes section takes up the rest */}
-            <div className="flex-1 p-5 overflow-auto">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
-            </div>
-          </div>
-        </div>
+    <div className="min-h-screen overflow-hidden bg-[#08110f] text-[#f7f0e6]">
+      <div className="portfolio-backdrop" aria-hidden="true">
+        <div className="backdrop-grid" />
+        <div className="backdrop-ribbon ribbon-one" />
+        <div className="backdrop-ribbon ribbon-two" />
+        <div className="backdrop-ribbon ribbon-three" />
+        <div className="backdrop-noise" />
       </div>
-
-      <Footer />
-    </Router>
+      <Navbar language={language} onLanguageChange={setLanguage} />
+      <main className="pt-20">
+        <Home language={language} />
+      </main>
+      <Footer language={language} />
+    </div>
   );
 }
 
