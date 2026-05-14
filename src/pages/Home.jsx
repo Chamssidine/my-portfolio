@@ -18,7 +18,7 @@ const projects = [
     title: "weg-to-deutschland",
     category: "Web App",
     visibility: "Private",
-    visual: "./web.webp",
+    visual: "journey",
     tech: ["TypeScript", "Product UX", "Web App"],
     description: {
       fr: "Projet TypeScript recent autour d'une experience web produit, pense pour accompagner un parcours utilisateur concret.",
@@ -30,7 +30,7 @@ const projects = [
     title: "AIToolkitMaster",
     category: "AI Tools",
     visibility: "Private",
-    visual: "./web.webp",
+    visual: "ai",
     tech: ["TypeScript", "AI", "Automation"],
     description: {
       fr: "Toolkit prive pour structurer des fonctionnalites IA utiles dans une experience web exploitable.",
@@ -42,7 +42,7 @@ const projects = [
     title: "RecruteMoi Back-End",
     category: "Backend",
     visibility: "Private",
-    visual: "./web.webp",
+    visual: "backend",
     tech: ["TypeScript", "API", "Recruitment"],
     description: {
       fr: "Backend TypeScript pour un produit de recrutement avec logique serveur et structure API.",
@@ -55,7 +55,7 @@ const projects = [
     category: "SaaS",
     visibility: "Public",
     url: "https://github.com/Chamssidine/ResumeArchit",
-    visual: "./web.webp",
+    visual: "resume",
     tech: ["TypeScript", "React", "Next.js", "Firebase"],
     description: {
       fr: "Application web pour creer, sauvegarder et exporter des CV professionnels avec preview en temps reel.",
@@ -68,7 +68,7 @@ const projects = [
     category: "AI",
     visibility: "Public",
     url: "https://github.com/Chamssidine/chat-app",
-    visual: "./web.webp",
+    visual: "chat",
     tech: ["React", "Node.js", "Express", "OpenAI API"],
     description: {
       fr: "Application full-stack de chat IA avec upload de documents, analyse de CV et integration OpenAI.",
@@ -81,7 +81,7 @@ const projects = [
     category: "Automation",
     visibility: "Public",
     url: "https://github.com/Chamssidine/Job-Scrawler",
-    visual: "./web.webp",
+    visual: "crawler",
     tech: ["JavaScript", "Scraping", "Automation"],
     description: {
       fr: "Automatisation de recherche et collecte d'offres, utile pour montrer le traitement de donnees web.",
@@ -285,6 +285,29 @@ const copy = {
     email: "Send email",
   },
 };
+
+function ProjectVisual({ project }) {
+  return (
+    <div className={`project-cover project-cover-${project.visual}`}>
+      <div className="project-cover-grid" />
+      <div className="project-cover-orbit orbit-a" />
+      <div className="project-cover-orbit orbit-b" />
+      <div className="project-cover-panel panel-main">
+        <span>{project.category}</span>
+        <strong>{project.title}</strong>
+      </div>
+      <div className="project-cover-panel panel-side">
+        {project.tech.slice(0, 3).map((tech) => (
+          <i key={tech}>{tech}</i>
+        ))}
+      </div>
+      <div className="project-cover-code">
+        <b>01</b>
+        <span>{project.visibility}</span>
+      </div>
+    </div>
+  );
+}
 
 function Home({ language }) {
   const t = copy[language];
@@ -540,11 +563,7 @@ function Home({ language }) {
 
           <div className="overflow-hidden rounded-[36px] border border-white/10 bg-white/10 p-6 shadow-2xl shadow-black/20 backdrop-blur lg:sticky lg:top-28 lg:self-start">
             <div className="mb-6 overflow-hidden rounded-[28px] border border-white/10 bg-black/20">
-              <img
-                src={activeProject.visual}
-                alt={activeProject.title}
-                className="project-preview h-56 w-full object-cover opacity-85"
-              />
+              <ProjectVisual project={activeProject} />
             </div>
             <div className="flex flex-wrap gap-2">
               <span className="rounded-full bg-[#e5f4ef] px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-[#0f766e]">
