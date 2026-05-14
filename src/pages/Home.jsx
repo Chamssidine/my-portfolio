@@ -23,6 +23,7 @@ const projects = [
     description: {
       fr: "Projet TypeScript recent autour d'une experience web produit, pense pour accompagner un parcours utilisateur concret.",
       de: "Aktuelles TypeScript-Projekt mit Produktfokus und einer klaren Web-User-Journey.",
+      en: "Recent TypeScript product-focused web project designed around a clear user journey.",
     },
   },
   {
@@ -34,6 +35,7 @@ const projects = [
     description: {
       fr: "Toolkit prive pour structurer des fonctionnalites IA utiles dans une experience web exploitable.",
       de: "Privates Toolkit, das KI-Funktionen in eine nutzbare Web-Erfahrung bringt.",
+      en: "Private toolkit for turning useful AI features into a usable web experience.",
     },
   },
   {
@@ -45,6 +47,7 @@ const projects = [
     description: {
       fr: "Backend TypeScript pour un produit de recrutement avec logique serveur et structure API.",
       de: "TypeScript-Backend fur ein Recruiting-Produkt mit API-Struktur und Business-Logik.",
+      en: "TypeScript backend for a recruitment product with API structure and business logic.",
     },
   },
   {
@@ -57,6 +60,7 @@ const projects = [
     description: {
       fr: "Application web pour creer, sauvegarder et exporter des CV professionnels avec preview en temps reel.",
       de: "Web-App zum Erstellen, Speichern und Exportieren professioneller Lebenslaufe mit Live-Preview.",
+      en: "Web app for creating, saving and exporting professional resumes with real-time preview.",
     },
   },
   {
@@ -69,6 +73,7 @@ const projects = [
     description: {
       fr: "Application full-stack de chat IA avec upload de documents, analyse de CV et integration OpenAI.",
       de: "Full-Stack KI-Chat-App mit Dokument-Upload, CV-Analyse und OpenAI-Integration.",
+      en: "Full-stack AI chat app with document upload, resume analysis and OpenAI integration.",
     },
   },
   {
@@ -81,6 +86,7 @@ const projects = [
     description: {
       fr: "Automatisation de recherche et collecte d'offres, utile pour montrer le traitement de donnees web.",
       de: "Automatisierung fur Jobsuche und Web-Datenverarbeitung.",
+      en: "Automation project for job search and web data processing.",
     },
   },
 ];
@@ -99,27 +105,27 @@ const otherProjects = [
 const techStack = [
   {
     key: "frontend",
-    label: { fr: "Frontend", de: "Frontend" },
+    label: { fr: "Frontend", de: "Frontend", en: "Frontend" },
     items: ["React", "Next.js", "Tailwind CSS", "Vite", "JavaScript", "TypeScript"],
   },
   {
     key: "backend",
-    label: { fr: "Backend", de: "Backend" },
+    label: { fr: "Backend", de: "Backend", en: "Backend" },
     items: ["Node.js", "Express", "ASP.NET", "REST API", "Authentication"],
   },
   {
     key: "data",
-    label: { fr: "Data & Cloud", de: "Data & Cloud" },
+    label: { fr: "Data & Cloud", de: "Data & Cloud", en: "Data & Cloud" },
     items: ["Firebase", "Firestore", "Cloud Storage", "Data Workflows"],
   },
   {
     key: "ai",
-    label: { fr: "IA & Automation", de: "KI & Automation" },
+    label: { fr: "IA & Automation", de: "KI & Automation", en: "AI & Automation" },
     items: ["OpenAI API", "Document Analysis", "Scraping", "Python"],
   },
   {
     key: "tools",
-    label: { fr: "Tools", de: "Tools" },
+    label: { fr: "Tools", de: "Tools", en: "Tools" },
     items: ["Git", "GitHub", "ESLint", "PostCSS", "Netlify"],
   },
 ];
@@ -227,6 +233,57 @@ const copy = {
       "Ich bin offen fur Full-Stack-Rollen, Freelance-Projekte und Produkt-Kollaboration.",
     email: "E-Mail senden",
   },
+  en: {
+    heroBadge: "Full-Stack Web Developer",
+    title: "I build modern and reliable full-stack web applications.",
+    subtitle:
+      "I design clean React/Next.js interfaces and robust TypeScript backends to turn real needs into usable web products.",
+    primary: "View projects",
+    secondary: "Contact me",
+    stats: [
+      ["25", "GitHub projects"],
+      ["10+", "web & AI products"],
+      ["TS", "main stack"],
+    ],
+    profileLabel: "Profile",
+    profileTitle: "A full-stack profile focused on web products.",
+    profileText:
+      "My projects follow a clear direction: web applications, backends, AI tools, automation and business platforms. Mobile or VR experience exists, but my core positioning is delivering web products end to end.",
+    skillLabel: "Stack",
+    skillTitle: "What I bring forward",
+    skills: [
+      {
+        icon: FaCode,
+        title: "Frontend",
+        text: "React, Next.js, Tailwind, responsive interfaces and clear UX.",
+      },
+      {
+        icon: FaServer,
+        title: "Backend",
+        text: "TypeScript APIs, Express, ASP.NET, auth and business logic.",
+      },
+      {
+        icon: FaRobot,
+        title: "AI & Automation",
+        text: "OpenAI API, document analysis, scraping and productivity tools.",
+      },
+      {
+        icon: FaDatabase,
+        title: "Data",
+        text: "Firebase, storage, workflows, product data and integrations.",
+      },
+    ],
+    projectsLabel: "Selected projects",
+    projectsTitle: "Public and private projects that show progression.",
+    privateLabel: "Private case study",
+    publicLabel: "Repository",
+    otherTitle: "Other projects",
+    contactLabel: "Contact",
+    contactTitle: "Let us talk about a web application to build.",
+    contactText:
+      "I am open to full-stack opportunities, freelance projects and product collaborations.",
+    email: "Send email",
+  },
 };
 
 function Home({ language }) {
@@ -238,7 +295,9 @@ function Home({ language }) {
       encodeURIComponent(
         language === "fr"
           ? "Projet full-stack depuis le portfolio"
-          : "Full-Stack Projekt aus dem Portfolio",
+          : language === "de"
+            ? "Full-Stack Projekt aus dem Portfolio"
+            : "Full-stack project from the portfolio",
       ),
     [language],
   );
@@ -402,13 +461,17 @@ function Home({ language }) {
               <h3 className="mt-3 text-3xl font-black text-[#f7f0e6]">
                 {language === "fr"
                   ? "Les technologies que j'utilise pour livrer."
-                  : "Technologien, mit denen ich Produkte liefere."}
+                  : language === "de"
+                    ? "Technologien, mit denen ich Produkte liefere."
+                    : "Technologies I use to ship products."}
               </h3>
             </div>
             <p className="max-w-md text-sm leading-6 text-[#aab8b0]">
               {language === "fr"
                 ? "Un apercu rapide de ma stack principale, organisee par usage."
-                : "Ein schneller Uberblick uber meinen Hauptstack, nach Einsatzbereich organisiert."}
+                : language === "de"
+                  ? "Ein schneller Uberblick uber meinen Hauptstack, nach Einsatzbereich organisiert."
+                  : "A quick overview of my main stack, organized by use case."}
             </p>
           </div>
 

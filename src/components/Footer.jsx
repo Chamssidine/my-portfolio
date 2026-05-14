@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 const copy = {
   fr: "Portfolio one-page construit avec React et Tailwind CSS.",
   de: "One-Page-Portfolio gebaut mit React und Tailwind CSS.",
+  en: "One-page portfolio built with React and Tailwind CSS.",
 };
 
 function Footer({ language }) {

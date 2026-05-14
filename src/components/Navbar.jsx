@@ -27,6 +27,18 @@ const copy = {
       { href: "#contact", label: "Kontakt" },
     ],
   },
+  en: {
+    role: "Full-Stack Developer",
+    cta: "Contact",
+    menuLabel: "Open menu",
+    nav: [
+      { href: "#home", label: "Home" },
+      { href: "#about", label: "Profile" },
+      { href: "#skills", label: "Stack" },
+      { href: "#projects", label: "Projects" },
+      { href: "#contact", label: "Contact" },
+    ],
+  },
 };
 
 function Navbar({ language, onLanguageChange }) {
@@ -100,7 +112,7 @@ function Navbar({ language, onLanguageChange }) {
 
         <div className="hidden items-center gap-2 md:flex">
           <div className="flex rounded-full border border-white/10 bg-white/8 p-1">
-            {["fr", "de"].map((lang) => (
+            {["fr", "de", "en"].map((lang) => (
               <button
                 key={lang}
                 type="button"
@@ -170,7 +182,7 @@ function Navbar({ language, onLanguageChange }) {
             ))}
           </nav>
           <div className="mt-4 flex rounded-full border border-white/10 bg-white/8 p-1">
-            {["fr", "de"].map((lang) => (
+            {["fr", "de", "en"].map((lang) => (
               <button
                 key={lang}
                 type="button"
